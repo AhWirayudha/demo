@@ -22,8 +22,13 @@ const Home = ({ navigation }) => {
     const [tgl, setTgl] = useState('');
     const [isEdit, setIsEdit] = useState(false);
 
-    const add = async (item) => {
+    const add = async () => {
         setModalVisible(true);
+    };
+
+    const hide = async () => {
+        cleardata();
+        setModalVisible(false);
     };
 
     const save = async () => {
@@ -37,11 +42,12 @@ const Home = ({ navigation }) => {
                 }
             );
         } else {
-            data.map(p =>
+            const updated = data.map(p =>
                 p.nik === nik
                     ? { ...p, nama: nama }
                     : p
             );
+            setData(updated);
         }
         cleardata();
         setModalVisible(false);
@@ -56,7 +62,7 @@ const Home = ({ navigation }) => {
     };
 
     const hapus = async (item) => {
-        const filtered = data.filter(function (ibj) { return obj.nik === item.nik; });
+        const filtered = data.filter(obj => obj.nik != item.nik);
         setData(filtered);
     };
 
@@ -155,7 +161,7 @@ const Home = ({ navigation }) => {
                         </Pressable>
                         <Pressable
                             style={[styles.button, styles.buttonClose]}
-                            onPress={() => setModalVisible(!modalVisible)}
+                            onPress={() => hide()}
                         >
                             <Text style={styles.textStyle}>Hide Modal</Text>
                         </Pressable>
