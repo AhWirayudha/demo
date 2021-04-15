@@ -110,7 +110,7 @@ const Home = ({ navigation }) => {
                 columnWrapperStyle={{ justifyContent: 'space-between' }}
             />
             <View style={{ justifyContent: 'center', alignItems: 'center', position: 'absolute', left: 0, right: 0, bottom: 0 }}>
-                <Text>© 2020 TK Al-Muhtadi II Semerek</Text>
+                <Text>© AH WIRAYUDHA</Text>
             </View>
             <Modal
                 animationType="slide"
