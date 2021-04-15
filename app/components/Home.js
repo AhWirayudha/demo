@@ -44,7 +44,7 @@ const Home = ({ navigation }) => {
         } else {
             const updated = data.map(p =>
                 p.nik === nik
-                    ? { ...p, nama: nama }
+                    ? { ...p, nama: nama, sex: sex, tgl: tgl }
                     : p
             );
             setData(updated);
@@ -134,6 +134,7 @@ const Home = ({ navigation }) => {
                             placeholder="NIK"
                             onChangeText={nik => setNik(nik)}
                             defaultValue={nik}
+                            editable={isEdit == true ? false : true}
                         />
                         <TextInput
                             style={{ height: 40 }}
