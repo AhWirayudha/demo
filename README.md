@@ -1,5 +1,5 @@
 # demo
-demo for edii
+demo
 
 
 using react-native
